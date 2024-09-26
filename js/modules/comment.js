@@ -4,7 +4,7 @@ export const initComments = () => {
 
     commentWrapper.style.display = 'none';
 
-    showHideBtn.onclick = () => {
+    showHideBtn.addEventListener('click', () =>  {
         const showHideText = showHideBtn.textContent;
         if(showHideText === 'Show comments') {
             showHideBtn.textContent = 'Hide comments';
@@ -13,29 +13,33 @@ export const initComments = () => {
             showHideBtn.textContent = 'Show comments';
             commentWrapper.style.display = 'none';
         }
-    };
+    });
 
     const form = document.querySelector('.comment-form');
     const nameField = document.querySelector('#name');
     const commentField = document.querySelector('#comment');
     const list = document.querySelector('.comment-container');
 
-    form.onsubmit = (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
         const listItem = document.createElement('li');
         const namePara = document.createElement('p');
         const commentPara = document.createElement('p');
-        const nameValue = nameField.value;
-        const commentValue = commentField.value;
+        const nameValue = nameField.value.trim();
+        const commentValue = commentField.value.trim();
 
-        namePara.textContent = nameValue;
-        commentPara.textContent = commentValue;
+        if (nameValue && commentValue) {
+            namePara.textContent = nameValue;
+            commentPara.textContent = commentValue;
 
-        list.appendChild(listItem);
-        listItem.appendChild(namePara);
-        listItem.appendChild(commentPara);
+            list.appendChild(listItem);
+            listItem.appendChild(namePara);
+            listItem.appendChild(commentPara);
 
-        nameField.value = '';
-        commentField.value = '';
-    };
+            nameField.value = '';
+            commentField.value = '';
+        } else {
+            alert('Please fill in both fields');
+        }
+    });
 }
