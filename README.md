@@ -209,7 +209,17 @@ Apply the following ruleset for Prettier:
 
 >  **What improvements in your codebase were introduced by using TS instead of JS? Name at least 3 and explain why.**
 
-Present your findings here...
+1. Static Typing
+
+Since TypeScript uses types for variables, paramters and return values like "string", it improves error detection. In this case we can see type-related errors during the compilation, whereas in JavaScript we only see them during runtime. --> Less prone to errors in production is always good
+
+2. Better Readability
+
+Because of the static typing as mentioned above, we also get an improved readability in our code, since we have a clear indication of the types of our values. This is useful for future developers so they can more easily and quickly understand the expected types a function takes and its also easier to understand the structure. --> A clear expectation of the function signature and object structure increases the consistency of the codebase
+
+3. Faster refactoring
+
+When refactoring we have to keep the functionality intact. Since we know more about variables and such, we have an easier time moving things around. This is tightly coupled with 1. and 2..
 
 ## 3.	CI/CD Pipeline Playground (5 Pts.)
 Implementation of a CI/CD pipeline to automate the development and deployment process – write automated tests.
