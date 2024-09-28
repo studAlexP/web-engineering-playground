@@ -28,7 +28,7 @@ export const fetchImageUrl = async (fileName: string): Promise<string> => {
     const pages = data?.query?.pages as Record<string, any>;
 
     if (!pages) {
-      throw new Error('Image not found');
+      new Error('Image not found');
     }
 
     const imageUrl = Object.values(pages)[0].imageinfo[0].url;
@@ -36,7 +36,7 @@ export const fetchImageUrl = async (fileName: string): Promise<string> => {
     const imgResponse = await fetch(imageUrl, { method: 'HEAD' });
 
     if (!imgResponse.ok) {
-      throw new Error('Image not found');
+      new Error('Image not found');
     }
 
     return imageUrl;
