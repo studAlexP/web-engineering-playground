@@ -12,7 +12,9 @@
     "format": "prettier --write \\\"src/**/*.{ts,tsx,js,jsx,json,css}\\\"",
     "format:check": "prettier --check \\\"src/**/*.{ts,tsx,js,jsx,json,css}\\\"",
     "prepare": "husky",
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "test": "jest --testMatch '**/?(*.)+(test|spec).[tj]s?(x)'",
+    "test:coverage": "jest --coverage --testMatch '**/?(*.)+(test|spec).[tj]s?(x)'"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx,js,jsx,json,css}": [
@@ -21,9 +23,12 @@
     ]
   },
   "devDependencies": {
+    "@types/jest": "^29.5.13",
     "husky": "^9.1.6",
+    "jest": "^29.7.0",
     "lint-staged": "^15.2.10",
     "prettier": "3.3.3",
+    "ts-jest": "^29.2.5",
     "typescript": "^5.6.2",
     "vite": "^5.4.1"
   }
