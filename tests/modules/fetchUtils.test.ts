@@ -12,9 +12,7 @@ describe('fetchImageUrl', () => {
       query: {
         pages: {
           '123': {
-            imageinfo: [
-              { url: 'https://example.com/test.jpg' },
-            ],
+            imageinfo: [{ url: 'https://example.com/test.jpg' }],
           },
         },
       },

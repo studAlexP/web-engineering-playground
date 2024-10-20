@@ -1,4 +1,4 @@
-import { fetchImageUrl } from './fetchUtils.js';
+import { fetchImageUrl } from './fetchUtils.ts';
 
 interface Bear {
   name: string;
@@ -7,7 +7,7 @@ interface Bear {
   range: string;
 }
 
-export const extractBears = async (wikitext: string) => {
+export const extractBears = async (wikitext: string): Promise<Bear[]> => {
   const speciesTables = wikitext.split('{{Species table/end}}');
   const bears = [];
 
@@ -20,9 +20,10 @@ export const extractBears = async (wikitext: string) => {
       const imageMatch = row.match(/\|image=(.*?)\n/);
       const rangeMatch = row.match(/\|range=(.*?)([|\n])/);
 
-      if (nameMatch && binomialMatch && imageMatch) {
+      if (nameMatch != null && binomialMatch != null && imageMatch != null) {
         const fileName = imageMatch[1].trim().replace('File:', '');
-        const range = rangeMatch ? rangeMatch[1].trim() : 'Range not available';
+        const range =
+          rangeMatch != null ? rangeMatch[1].trim() : 'Range not available';
 
         try {
           const imageUrl = await fetchImageUrl(fileName);
@@ -30,7 +31,7 @@ export const extractBears = async (wikitext: string) => {
             name: nameMatch[1],
             binomial: binomialMatch[1],
             image: imageUrl,
-            range: range,
+            range,
           };
           bears.push(bear);
         } catch (error) {
@@ -43,10 +44,10 @@ export const extractBears = async (wikitext: string) => {
   return bears;
 };
 
-export const displayBears = (bears: Bear[]) => {
+export const displayBears = (bears: Bear[]): void => {
   const moreBearsSection = document.querySelector('.more_bears');
 
-  if (!moreBearsSection) {
+  if (moreBearsSection == null) {
     console.error('More bears section not found');
     return;
   }

@@ -1,4 +1,4 @@
-export const initComments = () => {
+export const initComments = (): void => {
   const showHideBtn = document.querySelector('.show-hide') as HTMLElement;
   const commentWrapper = document.querySelector(
     '.comment-wrapper'
@@ -6,16 +6,16 @@ export const initComments = () => {
 
   commentWrapper.style.display = 'none';
 
-  const show_text = 'Show comments';
-  const hide_text = 'Hide comments';
+  const showText = 'Show comments';
+  const hideText = 'Hide comments';
 
   showHideBtn.onclick = () => {
     const showHideText = showHideBtn.textContent;
-    if (showHideText === show_text) {
-      showHideBtn.textContent = hide_text;
+    if (showHideText === showText) {
+      showHideBtn.textContent = hideText;
       commentWrapper.style.display = 'block';
     } else {
-      showHideBtn.textContent = show_text;
+      showHideBtn.textContent = showText;
       commentWrapper.style.display = 'none';
     }
   };

@@ -1,6 +1,6 @@
-import { initComments } from './modules/comment.js';
-import { fetchData } from './modules/fetchUtils.js';
-import { extractBears, displayBears } from './modules/bearParser.js';
+import { initComments } from './modules/comment.ts';
+import { fetchData } from './modules/fetchUtils.ts';
+import { extractBears, displayBears } from './modules/bearParser.ts';
 
 const baseUrl = 'https://en.wikipedia.org/w/api.php';
 const title = 'List_of_ursids';
@@ -14,11 +14,15 @@ const params = {
   origin: '*',
 };
 
-const getBearData = async () => {
+const getBearData = async (): Promise<void> => {
   try {
     const data = await fetchData(baseUrl, params);
 
-    if (!data) {
+    if (
+      data === null ||
+      data.parse === undefined ||
+      data.parse.wikitext === undefined
+    ) {
       console.error('Error fetching bear data');
       return;
     }
@@ -26,7 +30,7 @@ const getBearData = async () => {
     const wikitext = data.parse.wikitext['*'];
     const bears = await extractBears(wikitext);
 
-    if (bears && bears.length > 0) {
+    if (bears.length > 0) {
       displayBears(bears);
     } else {
       console.warn('No bears found.');
@@ -37,4 +41,4 @@ const getBearData = async () => {
 };
 
 initComments();
-getBearData();
+void getBearData();
