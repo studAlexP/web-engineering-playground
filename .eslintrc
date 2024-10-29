@@ -16,7 +16,7 @@
       }
     }
   },
-  "ignorePatterns": ["vite.config.ts"],
+  "ignorePatterns": ["vite.config.ts", "*.css"],
   "rules": {
     "no-console": "off",
     "linebreak-style": 0,
