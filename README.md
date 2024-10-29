@@ -244,7 +244,8 @@ Use the tools presented in our accessibility workshop to test the accessibility 
 
 Test the current color contrast (text/background), report the results of the test, and then fix them by changing the assigned colors.
 
-*Present your reports here.*
+To check whether the color contrast is fine I used the accessibility tab on my browser (Firefox) and checked for issues
+with the contrast. I caned the contrast accordingly. I this case to a light blue.
 
 **(0.5) Semantic HTML**
 
