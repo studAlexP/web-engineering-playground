@@ -256,25 +256,37 @@ Report on what happens when you try to navigate the page using a screen reader. 
 
 The ``<audio>`` player isn't accessible to hearing impaired (deaf) people — can you add some kind of accessible alternative for these users?
 
-*Present your findings and fixes here.*
+To make the audio player accessible I have transcribed the file and implemented a button where the user can toggle if he
+wants to view the transcript. For the implementation I have used the audio transcript example from MDN
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/Multimedia#audio_transcripts
 
 **(1) Forms** 
   * The ``<input>`` element in the search form at the top could do with a label, but we don't want to add a visible text label that would potentially spoil the design and isn't really needed by sighted users. Fix this issue by adding a label that is only accessible to screen readers.
   * The two ``<input>`` elements in the comment form have visible text labels, but they are not unambiguously associated with their labels — how do you achieve this? Note that you'll need to update some of the CSS rule as well.
 
-*Present your findings and fixes here.*
+To fix the inputs a visually hidden label has been added each of the added labels also has a "for="
+to create an association. The search got hidden by assigning an id to the label and adding css to keep it hidden. 
 
 **(0.5) Comment section**
 
 The show/hide comment control button is not currently keyboard-accessible. Can you make it keyboard accessible, both in terms of focusing it using the tab key, and activating it using the return key?
 
-*Present your findings and fixes here.*
+Since the button was represented as a *div* element I assigned it a button role while also setting the tabindex to 0.
+To open/close the comment section using the enter key I wait for a KeyboardEvent, check if the key is the 'Enter' key
+and then activate the element this is implemented in TypeScript.
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#good_semantics
 
 **(1) The table**
 
 The data table is not currently very accessible — it is hard for screen reader users to associate data rows and columns together, and the table also has no kind of summary to make it clear what it shows. Can you add some features to your HTML to fix this problem?
 
-*Present your findings and fixes here.*
+To make the table more accessible I have added a summary using the *caption* tag.
+The *th* elements now have a scope (col), additionally both bear types (Wild, Urban) have been replaced with a *th*
+and a row scope instead of the previous *td*.
+
+https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#accessible_data_tables
 
 **(1) More Findings**
 
