@@ -64,7 +64,7 @@ div[class='nav'],
 article,
 footer,
 .secondary {
-  background-color: green;
+  background-color: #b0e6ff;
 }
 
 article,
@@ -79,7 +79,7 @@ article {
 
 div[class='nav'] {
   height: 50px;
-  background-color: ff80ff;
+  background-color: #b0e6ff;
   display: flex;
   padding: 1% 0;
   margin-bottom: 10px;
@@ -266,4 +266,34 @@ audio {
 
 .comment-container li p:nth-child(2) {
   flex: 5;
+}
+
+.transcript-container {
+  width: 480px;
+  margin: 10px auto;
+  border: 1px solid #ccc;
+  min-height: 38px;
+}
+
+.transcript {
+  height: 0;
+  width: 100%;
+  overflow: auto;
+  padding: 0 10px;
+}
+
+.transcript-container button {
+  width: 100%;
+  height: 36px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
