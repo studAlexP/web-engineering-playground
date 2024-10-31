@@ -245,20 +245,20 @@ Use the tools presented in our accessibility workshop to test the accessibility 
 Test the current color contrast (text/background), report the results of the test, and then fix them by changing the assigned colors.
 
 To check whether the color contrast is fine I used the accessibility tab on my browser (Firefox) and checked for issues
-with the contrast. I caned the contrast accordingly. I this case to a light blue.
+with the contrast. I caned the contrast accordingly. In this case to a light blue.
 
 **(0.5) Semantic HTML**
 
 Report on what happens when you try to navigate the page using a screen reader. Fix those navigation issues.
 
-Screen reader usage: many of the section where not properly announced since it only said that there is a <div>
-but it didn't tell what the purpose of said <div> was. The new and clearer structure gives a better understanding about
-the (importance) different elements like <nav>
+Screen reader usage: many of the section where not properly announced since it only said that there is a ``<div>``
+but it didn't tell what the purpose of said ``<div>`` was. The new and clearer structure gives a better understanding about
+the (importance) different elements like ``<nav>``
 
-To fix the semantic HTML the <div> elements which tried to mimic an already existing HTML element have been removed
-(e.g. <div class="nav"> --> <nav>).
-Deprecated tags such as <font size="6"> have been replaced with proper headings.
-<br> tags have been replaced with <p> tags
+To fix the semantic HTML the ``<div>`` elements which tried to mimic an already existing HTML element have been removed
+(e.g. ``<div class="nav">`` --> ``<nav>``).
+Deprecated tags such as ``<font size="6">`` have been replaced with proper headings.
+``<br>`` tags have been replaced with <p> tags
 
 **(0.5) Audio** 
 
@@ -280,7 +280,7 @@ to create an association. The search got hidden by assigning an id to the label 
 
 The show/hide comment control button is not currently keyboard-accessible. Can you make it keyboard accessible, both in terms of focusing it using the tab key, and activating it using the return key?
 
-Since the button was represented as a *div* element I assigned it a button role while also setting the tabindex to 0.
+Since the button was represented as a ``div`` element I assigned it a button role while also setting the tabindex to 0.
 To open/close the comment section using the enter key I wait for a KeyboardEvent, check if the key is the 'Enter' key
 and then activate the element this is implemented in TypeScript.
 
@@ -290,9 +290,9 @@ https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#good_semantics
 
 The data table is not currently very accessible — it is hard for screen reader users to associate data rows and columns together, and the table also has no kind of summary to make it clear what it shows. Can you add some features to your HTML to fix this problem?
 
-To make the table more accessible I have added a summary using the *caption* tag.
-The *th* elements now have a scope (col), additionally both bear types (Wild, Urban) have been replaced with a *th*
-and a row scope instead of the previous *td*.
+To make the table more accessible I have added a summary using the ``caption`` tag.
+The ``th`` elements now have a scope (col), additionally both bear types (Wild, Urban) have been replaced with a ``th``
+and a row scope instead of the previous ``td``.
 
 https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#accessible_data_tables
 
