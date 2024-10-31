@@ -78,7 +78,7 @@ article {
   margin-right: 10px;
 }
 
-div.nav {
+nav {
   height: 50px;
   background-color: #b0e6ff;
   display: flex;
@@ -86,20 +86,20 @@ div.nav {
   margin-bottom: 10px;
 }
 
-div.nav ul {
+nav ul {
   padding: 0;
   list-style-type: none;
   flex: 2;
   display: flex;
 }
 
-div.nav li {
-  display: inline;
+nav li {
+  display: inline-block;
   text-align: center;
   flex: 1;
 }
 
-div.nav a {
+nav a {
   display: inline-block;
   font-size: 2rem;
   text-transform: uppercase;
@@ -107,7 +107,7 @@ div.nav a {
   color: #2a2a2a;
 }
 
-div.nav .search {
+nav .search {
   flex: 1;
   display: flex;
   align-items: center;
