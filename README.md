@@ -251,7 +251,14 @@ with the contrast. I caned the contrast accordingly. I this case to a light blue
 
 Report on what happens when you try to navigate the page using a screen reader. Fix those navigation issues.
 
-*Present your reports here.*
+Screen reader usage: many of the section where not properly announced since it only said that there is a <div>
+but it didn't tell what the purpose of said <div> was. The new and clearer structure gives a better understanding about
+the (importance) different elements like <nav>
+
+To fix the semantic HTML the <div> elements which tried to mimic an already existing HTML element have been removed
+(e.g. <div class="nav"> --> <nav>).
+Deprecated tags such as <font size="6"> have been replaced with proper headings.
+<br> tags have been replaced with <p> tags
 
 **(0.5) Audio** 
 
