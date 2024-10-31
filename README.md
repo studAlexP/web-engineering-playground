@@ -291,7 +291,8 @@ https://developer.mozilla.org/en-US/docs/Learn/Accessibility/HTML#accessible_dat
 
 **(1) More Findings**
 
-What other accessibility issues did you find? Explain how you did fix them.
+Font was horrible (e.g. overuse of cursive and bold text). Fixed by choosing another font-family removed necessary
+cursive and bold text. 
 
 # Extended Coding Playgrounds
 Please create a new independent Repository for these playgrounds and submit a link to it in the Moodle submission. 
