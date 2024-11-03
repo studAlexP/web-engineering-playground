@@ -13,9 +13,9 @@ transcriptBtn.onclick = function () {
   }
 };
 
-document.onkeydown = (e: KeyboardEvent): void => {
-  if (e.key === 'Enter') {
-    const activeElement = document.activeElement as HTMLElement;
-    activeElement?.click();
+transcriptBtn.addEventListener('keydown', (e: KeyboardEvent) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    transcriptBtn.click();
+    e.preventDefault();
   }
-};
+});
