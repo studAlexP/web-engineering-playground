@@ -305,3 +305,15 @@ audio {
   white-space: nowrap;
   border: 0;
 }
+
+a {
+  color: black;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: #975804;
+}
