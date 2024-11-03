@@ -19,3 +19,28 @@ transcriptBtn.addEventListener('keydown', (e: KeyboardEvent) => {
     e.preventDefault();
   }
 });
+
+const showCommentsBtn = document.querySelector('.show-hide') as HTMLElement;
+const commentWrapper = document.querySelector(
+  '.comment-wrapper'
+) as HTMLElement;
+
+showCommentsBtn.onclick = function () {
+  if (
+    commentWrapper.style.display === 'none' ||
+    commentWrapper.style.display === ''
+  ) {
+    commentWrapper.style.display = 'block';
+    showCommentsBtn.textContent = 'Hide comments';
+  } else {
+    commentWrapper.style.display = 'none';
+    showCommentsBtn.textContent = 'Show comments';
+  }
+};
+
+showCommentsBtn.addEventListener('keydown', (e: KeyboardEvent) => {
+  if (e.key === 'Enter' || e.key === ' ') {
+    showCommentsBtn.click();
+    e.preventDefault();
+  }
+});
